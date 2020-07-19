@@ -1,11 +1,25 @@
-import React from 'react';
-// import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Header from './components/Header.js';
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 
-function App() {
-      return(
-        <div></div>
-      );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      compamyName: "Company Name",
+      navigation: ["FEATURES", "ENTERPRISE", "SUPPORT", "LOGIN"]
+    }
+  }
+  render(){
+    return(
+      <Router>
+        <Route path="/">
+        <Header name={this.state.compamyName} navLinks={this.state.navigation}></Header>
+        </Route>
+      </Router>
+    );
+  }
 }
 
 export default App;
