@@ -1,0 +1,16 @@
+main {
+    height: 80%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 70%;
+    grid-template-rows: 1fr 1fr;
+    padding: 3%;
+}
+
+#home-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}

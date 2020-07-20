@@ -1,0 +1,15 @@
+article {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+#heading {
+    font-size: 2rem;
+}
+
+p {
+    margin-bottom: 10px;
+    white-space: pre-line;
+}
