@@ -17,6 +17,10 @@ footer>div {
     border-top: 1px solid lightgray;
 }
 
+footer>div>div>h2 {
+    margin-bottom: 5px;
+}
+
 footer>div>div {
     display: flex;
     flex-direction: column;
@@ -26,7 +30,7 @@ footer>div>div {
 .footer-link {
     text-decoration: none;
     color: black;
-    margin: 2px;
+    margin: 5px;
 }
 
 .footer-link:hover {
