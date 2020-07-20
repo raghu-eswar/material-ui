@@ -3,7 +3,7 @@ main {
     display: grid;
     align-items: center;
     justify-content: center;
-    grid-template-columns: 70%;
+    grid-template-columns: 100%;
     grid-template-rows: 1fr 1fr;
     padding: 3%;
 }
@@ -13,4 +13,10 @@ main {
     height: 100%;
     align-items: center;
     justify-content: center;
+}
+
+@media screen and (min-height:1024px) {
+    main {
+        height: 55%;
+    }
 }
