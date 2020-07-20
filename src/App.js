@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header.js';
 import Home from './components/Home.js';
+import Footer from './components/Footer.js';
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
         <Route path="/">
           <Home></Home>
         </Route>
+        <Footer></Footer>
       </Router>
     );
   }
