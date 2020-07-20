@@ -8,7 +8,7 @@ function Header(props) {
             <div>
                 <div id="logo">{props.name}</div>
                 <nav>  
-                    {props.navLinks.map(link => <div className="nav-links"><Link className="nav-link">{link}</Link></div>)} 
+                    {props.navLinks.map(link => <div className="nav-links"><Link to={link.link} className="nav-link">{link.name}</Link></div>)} 
                 </nav>
             </div>
         </header>

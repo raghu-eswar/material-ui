@@ -42,6 +42,7 @@ p {
 
 #select-option {
     padding: 5px;
+    box-shadow: 0 5px 5px -2px rgb(136, 136, 136);
 }
 
 #select-option>button {
