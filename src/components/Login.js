@@ -10,11 +10,10 @@ class Login extends Component {
     }
 
 validate(history) {
-    console.log(this.Route);
     let email = this.refs["email"].value;
     let password = this.refs["password"].value;
     let user = this.state.userData.filter(function(user) {
-        return Boolean(user.email == email && user.first_name == password);
+        return Boolean(user.email === email && user.first_name === password);
     })
     if(user[0]) 
         history.push(`/profile/${window.btoa(" "+user[0].id)+" "}`);
@@ -47,13 +46,7 @@ validate(history) {
     componentDidMount() {
         fetch("https://reqres.in/api/users")
         .then(res => res.json())
-        .then(
-            (result) => {
-                this.setState({
-                    userData: result.data
-                });
-            }
-        );        
+        .then((result) => this.setState({userData: result.data}));        
     }
 }
 
