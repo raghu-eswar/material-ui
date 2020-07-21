@@ -1,29 +1,59 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
 import '../styles/login.css';
+import { Route } from 'react-router-dom'
 
 class Login extends Component {
+    
+    constructor(props) {
+        super(props);
+        this.state = {error:""}
+    }
+
+validate(history) {
+    console.log(this.Route);
+    let email = this.refs["email"].value;
+    let password = this.refs["password"].value;
+    let user = this.state.userData.filter(function(user) {
+        return Boolean(user.email == email && user.first_name == password);
+    })
+    if(user[0]) 
+        history.push(`/profile/${window.btoa(" "+user[0].id)+" "}`);
+    else 
+        this.setState({error:"invalid email or password"});
+}
+
     render() {
         return ( 
             <main id="login">
                 <div id="login-form">
                     <h2>LOGIN</h2>
                     <div className="form-input">
-                        <input type="email" placeholder="Email" className="form-input-field" required
-                            pattern="^([a-zA-Z]+[a-zA-Z0-9\.-]+[a-zA-Z0-9]+)@([a-zA-Z]+).([a-z]){2,3}(.[a-z]{2,3})?$"
-                            title="should be like --user name--@--domine name--"/>
+                        <input ref="email" type="email" placeholder="Email" className="form-input-field" required/>
                     </div>
                     <div className="form-input">
-                        <input type="password" name="password" placeholder="Password" class="form-input-field" required
-                            pattern="^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{5,}$"
-                            title="must have at least 1 symbol and 1 number and 1 capital letter "/>
+                        <input ref="password" type="password" name="password" placeholder="Password" className="form-input-field" required/>
+                    </div>
+                    <div className="error-message">
+                        <p>{this.state.error}</p>
                     </div>
                     <div className="form-submit">
-                        <Link to="/" className="form-submit-button">Log in</Link>
+                        <Route render={({ history}) => (<button onClick={this.validate.bind(this, history)}>Log in</button>)} />
                     </div>
                 </div>
             </main>
         );
+    }
+
+    componentDidMount() {
+        fetch("https://reqres.in/api/users")
+        .then(res => res.json())
+        .then(
+            (result) => {
+                this.setState({
+                    userData: result.data
+                });
+            }
+        );        
     }
 }
 

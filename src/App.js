@@ -4,7 +4,9 @@ import Header from './components/Header.js';
 import Home from './components/Home.js';
 import Footer from './components/Footer.js';
 import Login from './components/Login.js';
+import Profile from './components/Profile.js';
 import {BrowserRouter as Router, Route} from 'react-router-dom'
+import { createBrowserHistory as history} from 'history';
 
 class App extends Component {
   constructor() {
@@ -16,7 +18,7 @@ class App extends Component {
   }
   render(){
     return(
-      <Router>
+      <Router history={history}>
         <Header name={this.state.compamyName} navLinks={this.state.navigation}></Header>
         <Route path="/" exact>
           <Home></Home>
@@ -24,6 +26,9 @@ class App extends Component {
         <Route path="/login" exact>
           <Login></Login>
         </Route>
+        <Route exact path="/profile/:id" render={(props)=>
+          <Profile id={props.match.params.id}/>
+        } />
         <Footer></Footer>
       </Router>
     );
