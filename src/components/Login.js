@@ -9,17 +9,23 @@ class Login extends Component {
         this.state = {error:""}
     }
 
-validate(history) {
-    let email = this.refs["email"].value;
-    let password = this.refs["password"].value;
-    let user = this.state.userData.filter(function(user) {
-        return Boolean(user.email === email && user.first_name === password);
-    })
-    if(user[0]) 
-        history.push(`/profile/${window.btoa(" "+user[0].id)+" "}`);
-    else 
-        this.setState({error:"invalid email or password"});
-}
+    componentDidMount() {
+        fetch("https://reqres.in/api/users")
+        .then(res => res.json())
+        .then((result) => this.setState({userData: result.data}));        
+    }
+
+    validate(history) {
+        let email = this.refs["email"].value;
+        let password = this.refs["password"].value;
+        let user = this.state.userData.filter(function(user) {
+            return Boolean(user.email === email && user.first_name === password);
+        })
+        if(user[0]) 
+            history.push(`/profile/${window.btoa(" "+user[0].id)+" "}`);
+        else 
+            this.setState({error:"invalid email or password"});
+    }
 
     render() {
         return ( 
@@ -43,11 +49,6 @@ validate(history) {
         );
     }
 
-    componentDidMount() {
-        fetch("https://reqres.in/api/users")
-        .then(res => res.json())
-        .then((result) => this.setState({userData: result.data}));        
-    }
 }
 
 export default Login;
