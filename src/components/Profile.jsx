@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/profile.css';
-import api from '../service/api.js';
+import store from '../service/store.js';
 
 class Profile extends Component {
 
@@ -12,7 +12,7 @@ class Profile extends Component {
     }
 
     componentDidMount() {
-        api.getUser(window.atob(this.props.match.params.id)-0).then(data => this.setState({user:data}));
+        store.getUser(window.atob(this.props.match.params.id)-0).then(data => this.setState({user:data}));
     }
 
     componentDidUpdate() {
@@ -45,7 +45,6 @@ class Profile extends Component {
         }
         return (
             <div id="profile">
-                {console.log(this.state)}
                 <div id="profile-data">
                     <div id="profile-data-image"><img src={this.state.user.data.avatar} alt=""/></div>
                     <div id="profile-data-mail"><span>email</span><span>:</span><input ref="email" defaultValue={this.state.user.data.email} className={this.state.inputClass}></input></div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/login.css';
 import { Route } from 'react-router-dom';
-import api from '../service/api.js';
+import store from '../service/store.js';
 
 class Login extends Component {
     
@@ -11,7 +11,7 @@ class Login extends Component {
     }
 
     componentDidMount() {
-        api.getAllUsers().then((result) => this.setState({userData: result.data}));        
+        store.getAllUsers().then((result) => this.setState({userData: result.data}));        
     }
 
     validate(history) {
