@@ -17,46 +17,85 @@
 #profile-data {
     height: 70%;
     width: 70%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 20% auto;
+    grid-template-areas: "image mail" "image first-name" "image last-name" "image company-name" "about about";
+    align-items: center;
+}
+
+#profile-data-image {
+    grid-area: image;
+    grid-template-columns: 100% !important;
+    grid-template-rows: 100% !important;
+}
+
+#profile-data-image>img {
+    width: 70%;
+    height: 100%;
+}
+
+#profile-data-mail {
+    grid-area: mail;
+}
+
+#profile-data-first-name {
+    grid-area: first-name;
+}
+
+#profile-data-last-name {
+    grid-area: last-name;
+}
+
+#profile-data-company-name {
+    grid-area: company-name;
+}
+
+#profile-data-about {
+    grid-area: about;
+}
+
+#profile-data>div>span {
+    font-weight: 600;
 }
 
 #profile-data>div>input {
     text-indent: 10px;
-    height: 5vh;
+    height: 60%;
+    width: 40%;
+    text-align: start;
+    background-color: transparent;
 }
 
 #profile-data>div>textarea {
-    width: 50vw;
-    height: 10vh;
     text-align: start;
-    margin-left: 10px;
+    height: max-content;
+    padding: 5px 0 0 10px;
 }
 
 #profile-data>div {
     display: grid;
-    grid-template-columns: 10vw auto;
+    grid-template-columns: 18% 2% auto;
+    align-items: center;
+    flex: 1;
+    height: 70%;
 }
 
 .blocked-input-field {
     pointer-events: none;
     border: none;
-    background-color: transparent;
-    text-align: start;
 }
 
 .loader {
-    position: absolute;
     top: 40%;
     left: 40%;
-    border: 2% solid transparent;
+    border: 1vw groove transparent;
     border-radius: 50%;
-    border-top: 2% solid gray;
+    border-bottom-color: gray;
     width: 10%;
-    height: 20%;
-    animation: spin 1s linear infinite;
+    height: 27%;
+    animation: spin 2s linear infinite;
+    z-index: 1;
 }
 
 @keyframes spin {
