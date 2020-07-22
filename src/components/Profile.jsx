@@ -21,7 +21,6 @@ class Profile extends Component {
 
     autoSize() {
         this.refs["about"].style.height = `${this.refs["about"].scrollHeight+5}px`
-        this.refs["about"].parentElement.style.height = `${this.refs["about"].scrollHeight+5}px`
     }
 
     enableEdit() {
@@ -53,11 +52,12 @@ class Profile extends Component {
                     <div id="profile-data-first-name"><span>first name</span><span>:</span><input ref="first-name" defaultValue={this.state.user.data.first_name} className={this.state.inputClass}></input></div>
                     <div id="profile-data-last-name"><span>last name</span><span>:</span><input ref="last-name" defaultValue={this.state.user.data.last_name} className={this.state.inputClass}></input></div>
                     <div id="profile-data-company-name"><span>company</span><span>:</span><input ref="company" defaultValue={this.state.user.ad.company} className={this.state.inputClass}></input></div>
-                    <div id="profile-data-about"><span>about</span><span>:</span><textarea ref="about" defaultValue={this.state.user.ad.text} className={this.state.inputClass}></textarea></div>
                     <div id="profile-options"><button id="profile-edit" onClick={this.enableEdit}>Edit</button>
                         <span></span>
-                        <button id="profile-save" onClick={this.saveProfile}>Save</button></div>
+                        <button id="profile-save" onClick={this.saveProfile}>Save</button>
+                    </div>
                 </div>
+                    <div id="profile-data-about"><h3>about</h3><textarea ref="about" maxLength={950} defaultValue={this.state.user.ad.text} className={this.state.inputClass}></textarea></div>
             </div>
         );
     }

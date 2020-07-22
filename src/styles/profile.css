@@ -1,8 +1,7 @@
 #profile {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     width: 100%;
     height: 80%;
     padding: 2%;
@@ -15,13 +14,13 @@
 }
 
 #profile-data {
-    height: 70%;
-    width: 70%;
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: repeat(6 auto);
-    grid-template-areas: "image mail" "image first-name" "image last-name" "image company-name" "about about" "profile-options profile-options";
+    grid-template-columns: 30% 100%;
+    grid-template-areas: "image mail" "image first-name" "image last-name" "image company-name" "profile-options profile-options";
     align-items: center;
+    column-gap: 5%;
+    width: 40%;
+    height: 80%;
 }
 
 #profile-data-image {
@@ -31,7 +30,7 @@
 }
 
 #profile-data-image>img {
-    width: 70%;
+    width: 100%;
     height: 100%;
 }
 
@@ -53,6 +52,12 @@
 
 #profile-data-about {
     grid-area: about;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: 80%;
+    justify-content: flex-start;
 }
 
 #profile-options {
@@ -60,7 +65,7 @@
 }
 
 #profile-options>button {
-    width: 10vw;
+    width: 6vw;
     height: 50%;
     background-color: transparent;
     outline: none;
@@ -74,16 +79,22 @@
 
 #profile-data>div>input {
     text-indent: 10px;
-    height: 90%;
-    width: 60%;
+    height: 65%;
+    width: 50%;
     text-align: start;
     background-color: transparent;
 }
 
-#profile-data>div>textarea {
+#profile-data-about>textarea {
     text-align: start;
     height: max-content;
     padding: 5px 0 0 10px;
+    width: 100%;
+    overflow: hidden;
+}
+
+#profile-data-about>h3 {
+    margin: 2% 0 2% 0;
 }
 
 #profile-data>div {
@@ -91,7 +102,6 @@
     display: grid;
     grid-template-columns: 18% 2% auto;
     align-items: center;
-    flex: 1;
     height: 70%;
 }
 
