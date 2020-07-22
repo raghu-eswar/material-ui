@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './components/Header.js';
-import Home from './components/Home.js';
-import Footer from './components/Footer.js';
-import Login from './components/Login.js';
-import Profile from './components/Profile.js';
+import Header from './components/Header.jsx';
+import Home from './components/Home.jsx';
+import Footer from './components/Footer.jsx';
+import Login from './components/Login.jsx';
+import Profile from './components/Profile.jsx';
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 class App extends Component {

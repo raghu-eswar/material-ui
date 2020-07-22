@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/login.css';
-import { Route } from 'react-router-dom'
+import { Route } from 'react-router-dom';
+import api from '../service/api.js';
 
 class Login extends Component {
     
@@ -10,9 +11,7 @@ class Login extends Component {
     }
 
     componentDidMount() {
-        fetch("https://reqres.in/api/users")
-        .then(res => res.json())
-        .then((result) => this.setState({userData: result.data}));        
+        api.getAllUsers().then((result) => this.setState({userData: result.data}));        
     }
 
     validate(history) {

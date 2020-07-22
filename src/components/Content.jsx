@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Subscriptions from './Subscription.js'
+import Subscriptions from './Subscription.jsx'
 import '../styles/content.css'
 
 class Content extends Component {

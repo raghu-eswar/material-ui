@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import '../styles/home.css'
-import Article from '../components/Article.js'
-import Content from '../components/Content.js'
+import Article from './Article.jsx'
+import Content from './Content.jsx'
 
 class Home extends Component {
 
