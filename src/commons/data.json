@@ -1,0 +1,54 @@
+{
+    "compamyName": "Company Name",
+    "navigation": [
+        { "name": "FEATURES", "link": "/features" },
+        { "name": "ENTERPRISE", "link": "/enterprise" },
+        { "name": "SUPPORT", "link": "/support" },
+        { "name": "LOGIN", "link": "/login" }
+    ],
+    "footerContent": [{
+            "title": "Company",
+            "links": ["Team", "History", "Contact Us", "Locations"]
+        },
+        {
+            "title": "Fetures",
+            "links": ["Cool stuff", "Random feature", "Team feature", "Developer stuff", "Another one"]
+        },
+        {
+            "title": "Resources",
+            "links": ["Resorce", "Resorce name", "Another resorce", "Final resorce"]
+        },
+        {
+            "title": "Legal",
+            "links": ["Privacy policy", "Terms of use"]
+        }
+    ],
+    "subscriptions": [{
+            "title": "Free",
+            "price": 0,
+            "usersIncluded": 10,
+            "storage": 2,
+            "support": "Email support",
+            "isPopular": false,
+            "button": "SIGN UP FOR FREE"
+        },
+        {
+            "title": "Pro",
+            "price": 15,
+            "usersIncluded": 20,
+            "storage": 10,
+            "support": "Priority email support",
+            "isPopular": true,
+            "button": "GET STARTED"
+        },
+        {
+            "title": "Enterprise",
+            "price": 30,
+            "usersIncluded": 50,
+            "storage": 30,
+            "support": "Phone & email support",
+            "isPopular": false,
+            "button": "CONTACT US"
+        }
+    ]
+}

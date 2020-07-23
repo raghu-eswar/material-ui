@@ -12,7 +12,7 @@ class Home extends Component {
                     <Article></Article>
                 </section>
                 <div id="home-content">
-                    <Content></Content>
+                    <Content {...this.props}></Content>
                 </div>
            </main>
         );

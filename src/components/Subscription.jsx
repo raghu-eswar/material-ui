@@ -17,7 +17,7 @@ function Subscriptions (props) {
                 <p>{discription}</p>
             </div>
             <div id="select-option">
-                {props.subscription.button}
+                <button>{props.subscription.button}</button>
             </div>
         </div>
     );

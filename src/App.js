@@ -6,21 +6,16 @@ import Footer from './components/Footer.jsx';
 import Login from './components/Login.jsx';
 import Profile from './components/Profile.jsx';
 import {BrowserRouter as Router, Route} from 'react-router-dom'
+import appData from './commons/data.json'
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      compamyName: "Company Name",
-      navigation: [{name:"FEATURES",link:"/features"}, {name:"ENTERPRISE",link:"/enterprise"}, {name:"SUPPORT",link:"/support"}, {name:"LOGIN",link:"/login"}]
-    }
-  }
+  
   render(){
     return(
       <Router>
-        <Header name={this.state.compamyName} navLinks={this.state.navigation}></Header>
+        <Header name={appData.compamyName} navLinks={appData.navigation}></Header>
         <Route path="/" exact>
-          <Home></Home>
+          <Home subscriptions={appData.subscriptions}></Home>
         </Route>
         <Route path="/login" exact>
           <Login></Login>
@@ -28,7 +23,7 @@ class App extends Component {
         <Route exact path="/profile/:id" render={(props)=>
           <Profile match={props.match}/>
         } />
-        <Footer></Footer>
+        <Footer footerContent={appData.footerContent}></Footer>
       </Router>
     );
   }
