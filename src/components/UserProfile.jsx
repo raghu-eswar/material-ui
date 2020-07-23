@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import '../styles/profile.css';
+import '../styles/userProfile.css';
 import store from '../service/store.js';
 
-class Profile extends Component {
+class UserProfile extends Component {
 
     constructor() {
         super();
@@ -63,4 +63,4 @@ class Profile extends Component {
 
 }
 
-export default Profile;
+export default UserProfile;
